@@ -699,6 +699,231 @@
   opacity: 0.7;
 }
 
+/* Mobile Host Participant Grid Layout - WhatsApp Style */
+@media (max-width: 768px) {
+  /* Mobile: 1 participant - Full screen */
+  .secondary-videos-section.mobile-host-participants-1 {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: 1fr !important;
+    padding: 0 !important;
+    gap: 0 !important;
+  }
+
+  .secondary-videos-section.mobile-host-participants-1 .video-wrapper {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    border-radius: 0 !important;
+  }
+
+  .secondary-videos-section.mobile-host-participants-1 .video-frame {
+    object-fit: cover !important;
+    aspect-ratio: 16 / 9 !important;
+  }
+
+  /* Mobile Host: 2 participants - Side by side */
+  .secondary-videos-section.mobile-host-participants-2 {
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: 1fr !important;
+    gap: 8px !important;
+  }
+
+  .secondary-videos-section.mobile-host-participants-2 .video-wrapper {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    border-radius: 8px !important;
+  }
+
+  .secondary-videos-section.mobile-host-participants-2 .video-frame {
+    object-fit: cover !important;
+    aspect-ratio: 16 / 9 !important;
+  }
+
+  /* Mobile Host: 3 participants - 2 on top, 1 large bottom */
+  .secondary-videos-section.mobile-host-participants-3 {
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: 1fr 1fr !important;
+    gap: 8px !important;
+  }
+
+  .secondary-videos-section.mobile-host-participants-3 .video-wrapper {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    border-radius: 8px !important;
+  }
+
+  .secondary-videos-section.mobile-host-participants-3 .video-wrapper:nth-child(3) {
+    grid-column: 1 / -1 !important;
+  }
+
+  .secondary-videos-section.mobile-host-participants-3 .video-frame {
+    object-fit: cover !important;
+    aspect-ratio: 16 / 9 !important;
+  }
+
+  /* Mobile Host: 4 participants - 2x2 grid */
+  .secondary-videos-section.mobile-host-participants-4 {
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: 1fr 1fr !important;
+    gap: 8px !important;
+    padding: 8px !important;
+  }
+
+  .secondary-videos-section.mobile-host-participants-4 .video-wrapper {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    border-radius: 8px !important;
+    aspect-ratio: 16 / 9 !important;
+  }
+
+  /* Mobile Host: 5 participants - 2,2,1 centered */
+  .secondary-videos-section.mobile-host-participants-5 {
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: auto auto auto !important;
+    gap: 8px !important;
+    padding: 8px !important;
+  }
+
+  .secondary-videos-section.mobile-host-participants-5 .video-wrapper {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    border-radius: 8px !important;
+    aspect-ratio: 16 / 9 !important;
+  }
+
+  .secondary-videos-section.mobile-host-participants-5 .video-wrapper:nth-child(5) {
+    grid-column: 1 / -1 !important;
+    max-width: 400px !important;
+    justify-self: center;
+  }
+
+  /* Mobile Host: 6 participants - 3x2 grid (2 per row) */
+  .secondary-videos-section.mobile-host-participants-6 {
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: 1fr 1fr 1fr !important;
+    gap: 8px !important;
+    padding: 8px !important;
+  }
+
+  .secondary-videos-section.mobile-host-participants-6 .video-wrapper {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    border-radius: 8px !important;
+    aspect-ratio: 16 / 9 !important;
+  }
+
+  /* Mobile Host: 7 participants - 2,2,2,1 centered */
+  .secondary-videos-section.mobile-host-participants-7 {
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: auto auto auto auto !important;
+    gap: 8px !important;
+    padding: 8px !important;
+  }
+
+  .secondary-videos-section.mobile-host-participants-7 .video-wrapper {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    border-radius: 8px !important;
+    aspect-ratio: 16 / 9 !important;
+  }
+
+  .secondary-videos-section.mobile-host-participants-7 .video-wrapper:nth-child(7) {
+    grid-column: 1 / -1 !important;
+    max-width: 400px !important;
+    justify-self: center;
+  }
+
+  /* Mobile Host: 8 participants - 4x2 grid (2 per row) */
+  .secondary-videos-section.mobile-host-participants-8 {
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: 1fr 1fr 1fr 1fr !important;
+    gap: 8px !important;
+    padding: 8px !important;
+  }
+
+  .secondary-videos-section.mobile-host-participants-8 .video-wrapper {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    border-radius: 8px !important;
+    aspect-ratio: 16 / 9 !important;
+  }
+
+  /* Mobile Host: 9+ participants - Scrollable with pagination */
+  .secondary-videos-section.mobile-host-participants-9,
+  .secondary-videos-section.mobile-host-participants-10,
+  .secondary-videos-section.mobile-host-participants-11,
+  .secondary-videos-section.mobile-host-participants-12,
+  .secondary-videos-section.mobile-host-participants-13,
+  .secondary-videos-section.mobile-host-participants-14,
+  .secondary-videos-section.mobile-host-participants-15 {
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: auto !important;
+    gap: 8px !important;
+    padding: 8px !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .secondary-videos-section.mobile-host-participants-9 .video-wrapper,
+  .secondary-videos-section.mobile-host-participants-10 .video-wrapper,
+  .secondary-videos-section.mobile-host-participants-11 .video-wrapper,
+  .secondary-videos-section.mobile-host-participants-12 .video-wrapper,
+  .secondary-videos-section.mobile-host-participants-13 .video-wrapper,
+  .secondary-videos-section.mobile-host-participants-14 .video-wrapper,
+  .secondary-videos-section.mobile-host-participants-15 .video-wrapper {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    border-radius: 8px !important;
+    aspect-ratio: 16 / 9 !important;
+  }
+
+  /* Core mobile video container setup */
+  .video-container {
+    padding: 0 !important;
+    gap: 0 !important;
+    background: #000;
+    overflow: hidden !important;
+  }
+
+  .main-video-section {
+    display: none !important;
+  }
+
+  .secondary-videos-section {
+    display: grid !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    padding: 8px !important;
+    gap: 8px !important;
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto !important;
+    align-items: center !important;
+    justify-items: center !important;
+    overflow-y: auto !important;
+  }
+
+  /* All video frames maintain 16:9 ratio */
+  .video-container .video-wrapper .video-frame {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+}
+
 /* Host connection quality indicator */
 .host-connection-quality {
   position: fixed;

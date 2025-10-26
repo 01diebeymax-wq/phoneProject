@@ -1055,12 +1055,24 @@ class MobileHostMeetingEnhancer {
     const secondarySection = document.getElementById('secondaryVideosSection');
     if (!secondarySection) return;
 
+    // Count visible participants excluding self-view
     const visibleWrappers = Array.from(document.querySelectorAll('.secondary-videos-section .video-wrapper'))
-      .filter(wrapper => wrapper.style.display !== 'none');
+      .filter(wrapper => {
+        // Exclude hidden wrappers
+        if (wrapper.style.display === 'none') return false;
+
+        // Exclude self-view (local video)
+        const socketId = wrapper.dataset.socketId;
+        if (window.socket && socketId === window.socket.id) return false;
+
+        return true;
+      });
 
     const participantCount = visibleWrappers.length;
 
+    // Remove all previous mobile host participant classes
     secondarySection.classList.remove(
+      'mobile-host-participants-1',
       'mobile-host-participants-2',
       'mobile-host-participants-3',
       'mobile-host-participants-4',
@@ -1068,14 +1080,24 @@ class MobileHostMeetingEnhancer {
       'mobile-host-participants-6',
       'mobile-host-participants-7',
       'mobile-host-participants-8',
-      'mobile-host-participants-9'
+      'mobile-host-participants-9',
+      'mobile-host-participants-10',
+      'mobile-host-participants-11',
+      'mobile-host-participants-12',
+      'mobile-host-participants-13',
+      'mobile-host-participants-14',
+      'mobile-host-participants-15'
     );
 
-    if (participantCount >= 2 && participantCount <= 9) {
+    // Apply the appropriate class based on participant count
+    if (participantCount >= 1 && participantCount <= 15) {
       secondarySection.classList.add(`mobile-host-participants-${participantCount}`);
+      console.log(`Applied mobile host layout for ${participantCount} participants`);
+    } else if (participantCount > 15) {
+      // For more than 15, use a scrollable grid
+      secondarySection.classList.add('mobile-host-participants-15');
+      console.log(`Applied mobile host layout for ${participantCount} participants (max 15 layout)`);
     }
-
-    console.log(`Applied mobile host layout for ${participantCount} participants`);
   }
 
   enhanceHostToolsPanel() {
